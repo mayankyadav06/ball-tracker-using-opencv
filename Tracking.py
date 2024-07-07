@@ -2,9 +2,15 @@
 import cv2
 import numpy as np
 import time
+import gdown
+
+# Download the video file from Google Drive
+url = 'https://drive.google.com/uc?id=1goI3aHVE29Gko9lpTzgi_g3CZZPjJq8w'
+output = 'AI_Assignment_video.mp4'
+gdown.download(url, output, quiet=False)
 
 # Open the video file
-cap = cv2.VideoCapture("AI Assignment video.mp4")
+cap = cv2.VideoCapture(output)
 
 # Get the video's width, height, and fps
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
